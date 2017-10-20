@@ -1,0 +1,22 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"basil-site",
+      "labels":{
+         "app":"basil-site"
+      }
+   },
+   "spec":{
+      "ports": [
+         {
+           "port":3000,
+           "targetPort":"http-server"
+         }
+      ],
+      "selector":{
+         "app":"basil-site"
+      },
+      "type": "LoadBalancer"
+   }
+}

@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"basil-site",
+      "labels":{
+         "app":"basil-site"
+      }
+   },
+   "spec":{
+      "replicas":3,
+      "selector":{
+         "app":"basil-site"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "app":"basil-site"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"basil-site",
+                  "image":"gcr.io/basil-183519/basil-site:v5",
+                  "ports":[
+                     {
+                        "name":"http-server",
+                        "containerPort":3000
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
