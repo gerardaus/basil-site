@@ -19,6 +19,6 @@ func (hc *HomeControllerImpl) Register(router *mux.Router) {
 }
 
 func (hc *HomeControllerImpl) single(w http.ResponseWriter, req *http.Request) {
-	t, _ := template.ParseFiles("views/home.html")
+	t, _ := template.ParseFiles("views/test.html")
 	t.Execute(w, nil)
 }
